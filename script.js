@@ -1171,7 +1171,7 @@ window.addEventListener('beforeunload', function (event) {
         return ''; // Algunos navegadores requieren este valor
     }
 });
-
+/*
 // Interceptar el clic en el botón de recargar del navegador
 window.addEventListener('mousedown', function (event) {
     if (event.button === 0 && event.target.tagName === "BODY") {
@@ -1180,6 +1180,7 @@ window.addEventListener('mousedown', function (event) {
         event.preventDefault(); // Evitar la acción predeterminada
     }
 });
+*/
 
 // Interceptar teclas específicas (F5 o Ctrl+R)
 window.addEventListener('keydown', function (event) {
