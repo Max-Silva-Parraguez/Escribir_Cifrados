@@ -132,7 +132,7 @@ function moveToNextLineOnEnter(currentLine) {
     const nextLine = currentLine.nextElementSibling;
     if (nextLine && nextLine.classList.contains("line")) {
         nextLine.focus();
-        nextLine.textContent = ""; // Limpiar el texto inicial de la siguiente línea
+        /*nextLine.textContent = ""; // Limpiar el texto inicial de la siguiente línea*/
     }
 }
 
