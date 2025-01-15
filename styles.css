@@ -1,0 +1,2862 @@
+/* Estilos generales */
+body {
+    
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: linear-gradient(to bottom, #7cd6fa, #ffffff);
+    min-height: 100vh; /* Asegura que cubra toda la pantalla */
+}
+
+.control-panel {
+    position: fixed;
+    top: 95px;
+    left: 10px; /* Centrar horizontalmente */
+    /*transform: translateX(-50%); /* Ajustar el centrado */
+    width: 385px;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    display: flex; /* Activar Flexbox */
+    flex-direction: column; /* Alinear elementos en columna */
+    align-items: center; /* Centrar horizontalmente los botones */
+    gap: 5px; /* Espaciado entre botones */
+}
+
+.control-panel button {
+    width: 200px; /* Ancho fijo para los botones */
+    font-size: 16px;
+    cursor: pointer;
+   /* background-color: #007bff; /* Color de fondo */
+    color: white; /* Color de texto */
+    border: none;
+    border-radius: 5px; /* Bordes redondeados */
+    text-align: center;
+}
+
+.control-panel h2 {
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+
+/* Estilos para el cuadro de mandos de hojas */
+.sheet-panel {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 405px;
+    height: 54px;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.sheet-panel button {
+    width: 90%;
+    margin: 5px 0;
+    padding: 5px;
+    
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+}
+
+.buttons button {
+    width: 67px;
+    margin: 2px;
+}
+
+
+/* Hoja */
+.sheet-container {
+    margin-top: 10px;
+    margin-left: 440px;
+}
+
+.sheet {
+    width: 21cm;
+    height: 29.7cm;
+    background-color: white;
+    border: 1px solid #000;
+    padding: 20px;
+    position: relative;
+    box-sizing: border-box;
+    overflow-y: auto;
+    page-break-after: always;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+}
+
+
+.header input {
+    font-family: "Comic Sans MS";
+    font-size: 35px;
+    font-weight: bold;
+    border: none;
+    width: 100%;
+    text-align: center;
+    color: rgb(67, 67, 199);
+    /*border-bottom: 1px solid #000;*/
+
+}
+
+#title::placeholder {
+    color: grey; /* Cambia este color al que desees */
+}
+
+
+
+.header2 input {
+    font-family: "Comic Sans MS";
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    width: 30%;
+    text-align: right;
+    margin-left: 65%;
+    margin-right: 2%;
+    color: red;
+    /*border-bottom: 1px solid #000;*/
+}
+
+#author::placeholder {
+    color: grey; /* Cambia este color al que desees */
+}
+
+/*margen entre lineas y titulo*/
+.content {
+    /*white-space: pre-wrap;*/
+    line-height: 1.6;
+    font-family:"Comic Sans MS";
+    font-size: 25px;
+    padding-top: 20px;
+    /*Espacio entre arriba y abajo*/
+    margin-left: 70px;
+    /*margen de la izquierda*/
+    margin-right: 30px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 12px;
+    color: gray;
+}
+
+.footer2 {
+    position: absolute;
+    bottom: 1px;
+    left: 720px;
+    font-size: 12px;
+    color: gray;
+}
+
+/* Estilos para las filas de botones */
+.button-row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+}
+
+.button-row button {
+    width: 110px;
+    margin: 2px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* Estilos para el contenedor de la hoja */
+.page-content {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-size: 80px;
+    line-height: 1;
+    /* Ajusta el espaciado entre líneas si es necesario */
+}
+
+/*------------Estilo de las líneas --------------------*/
+.line {
+   color: rgb(255, 255, 255);
+}
+
+
+
+/*--------------PALETA DE COLORES------------------*/
+.color-palette {
+    position: fixed;
+    top: 286px;
+    left: 10px;
+    width: 405px;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.paleta_colores {
+    margin-bottom: 15px; /* Espacio específico para separar el primer div */
+}
+
+.paleta_colores button {
+    width: 30px;
+    margin: 5px 0;
+    padding: 17px;
+    font-size: 14px;
+    margin-left: 16px;
+}
+
+.estilos_texto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+}
+
+.mi-casilla {
+    width: 13px;
+    height: 13px;
+    margin-right: 3px;
+    border-right-width: 15px;
+    padding-left: 25px;
+    border-left-width: 25px;
+    margin-left: 390px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+
+.subrayado{
+    width: 50px;
+    height: 40px;
+    margin: 2px;
+    font-size: 25px;
+    text-decoration: underline;
+    border: none;
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.subrayado:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.subrayado:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+
+.negrita{
+    width: 50px;
+    height: 40px;
+    margin: 2px;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.negrita:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.negrita:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+.cursiva{
+    width: 50px;
+    height: 40px;
+    margin: 2px;
+    font-size: 25px;
+    font-style: italic;
+    border: none;
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.cursiva:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.cursiva:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+
+.aumentar, .disminuir {
+    width: 50px;
+    height: 40px;
+    margin: 2px;
+    font-size: 25px;
+    border: none;
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.aumentar:hover, .disminuir:hover {
+    filter: brightness(0.5); /* Hace el botón ligeramente más oscuro */
+}
+
+/* Efecto cuando se hace clic */
+.aumentar:active, .disminuir:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+
+
+
+.color-palette h2 {
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.color {
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.color:hover {
+    transform: scale(1.1);
+}
+
+/******************************************PONER IMAGEN EN EL BOTON SEGMA***************************************************/
+.btn-segma {
+    background-image: url('./Imagenes/Segno.png'); /* Ruta de tu imagen */
+    background-size: 50px 50px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 70px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn-segma:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn-segma:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/******************************************PONER IMAGEN EN EL BOTON CODA***************************************************/
+.btn-coda {
+    background-image: url('./Imagenes/Coda.png'); /* Ruta de tu imagen */
+    background-size: 50px 50px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 70px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn-coda:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn-coda:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/********************************PONER IMAGEN EN EL BOTON INICIO REPETICION***************************************************/
+.btn-inicioRep {
+    background-image: url('./Imagenes/InicioRep.png'); /* Ruta de tu imagen */
+    background-size: 30px 50px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 70px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn-inicioRep:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn-inicioRep:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/******************************PONER IMAGEN EN EL BOTON FIN REPETICION***************************************************/
+.btn-finRep {
+    background-image: url('./Imagenes/FinRep.png'); /* Ruta de tu imagen */
+    background-size: 30px 50px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 70px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn-finRep:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn-finRep:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+
+
+/**************************************PONER IMAGEN EN EL BOTON PARADA RAYA***************************************************/
+.btn_paradaRaya {
+    background-image: url('./Imagenes/paradaRaya.png'); /* Ruta de tu imagen */
+    background-size: 40px 5px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 70px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_paradaRaya:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_paradaRaya:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/**************************************PONER IMAGEN EN EL BOTON GUION***************************************************/
+.btn_guion {
+    background-image: url('./Imagenes/guion.png'); /* Ruta de tu imagen */
+    background-size: 15px 15px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 70px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_guion:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_guion:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/**************************************PONER IMAGEN EN EL BOTON Salida 1***************************************************/
+.btn_salida1 {
+    background-image: url('./Imagenes/salida1.png'); /* Ruta de tu imagen */
+    background-size: 60px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 40px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_salida1:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_salida1:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/**************************************PONER IMAGEN EN EL BOTON Salida 2***************************************************/
+.btn_salida2 {
+    background-image: url('./Imagenes/salida2.png'); /* Ruta de tu imagen */
+    background-size: 60px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 40px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_salida2:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_salida2:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+/**************************************PONER IMAGEN EN EL BOTON Salida 3***************************************************/
+.btn_salida3 {
+    background-image: url('./Imagenes/salida3.png'); /* Ruta de tu imagen */
+    background-size: 60px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 40px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_salida3:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_salida3:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/**************************************PONER IMAGEN EN EL BOTON Salida 4***************************************************/
+.btn_salida4 {
+    background-image: url('./Imagenes/salida4.png'); /* Ruta de tu imagen */
+    background-size: 60px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 40px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_salida4:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_salida4:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+
+/**************************************PONER IMAGEN EN EL BOTON Salida 5***************************************************/
+.btn_salida5 {
+    background-image: url('./Imagenes/salida5.png'); /* Ruta de tu imagen */
+    background-size: 60px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 40px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_salida5:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_salida5:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/**************************************PONER IMAGEN EN EL FLECHA ARRIBA***************************************************/
+.btn_arriba {
+    background-image: url('./Imagenes/flechaArriba.png'); /* Ruta de tu imagen */
+    background-size: 25px 25px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 70px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_arriba:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_arriba:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+
+/**************************************PONER IMAGEN EN EL FLECHA ABAJO***************************************************/
+.btn_abajo {
+    background-image: url('./Imagenes/flechaAbajo.png'); /* Ruta de tu imagen */
+    background-size: 25px 25px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 70px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_abajo:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_abajo:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/******************************************PONER IMAGEN EN EL BOTON DESHACER***************************************************/
+.btn_deshacer {
+    background-image: url('./Imagenes/deshacer.png'); /* Ruta de tu imagen */
+    background-size: 30px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_deshacer:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_deshacer:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/******************************************PONER IMAGEN EN EL BOTON ADDPAGINA***************************************************/
+.btn_addpagina {
+    background-image: url('./Imagenes/addpagina.png'); /* Ruta de tu imagen */
+    background-size: 30px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_addpagina:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_addpagina:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/******************************************PONER IMAGEN EN EL BOTON DELETEPAGINA***************************************************/
+.btn_deletepagina {
+    background-image: url('./Imagenes/deletepagina.png'); /* Ruta de tu imagen */
+    background-size: 30px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_deletepagina:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_deletepagina:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/******************************************PONER IMAGEN EN EL BOTON EXPORTAR IMAGENES***************************************************/
+.btn_exportIMG {
+    background-image: url('./Imagenes/exportar.png'); /* Ruta de tu imagen */
+    background-size: 40px 40px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_exportIMG:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_exportIMG:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/******************************************PONER IMAGEN EN EL BOTON EXPORTAR PDF***************************************************/
+.btn_exportPDF {
+    background-image: url('./Imagenes/pdf.png'); /* Ruta de tu imagen */
+    background-size: 40px 40px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_exportPDF:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_exportPDF:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/******************************************PONER IMAGEN EN EL BOTON RAYA LARGA***************************************************/
+.btn_rayaLarga {
+    background-image: url('./Imagenes/rayaLarga.png'); /* Ruta de tu imagen */
+    background-size: 80px 10px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_rayaLarga:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_rayaLarga:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/***************************************PONER IMAGEN EN EL BOTON RAYA VERTICAL***************************************************/
+.btn_rayaVertical {
+    background-image: url('./Imagenes/rayaVertical.png'); /* Ruta de tu imagen */
+    background-size: 40px 60px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_rayaVertical:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_rayaVertical:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/******************************************PONER IMAGEN EN EL BOTON I ***************************************************/
+.btn_I {
+    background-image: url('./Imagenes/I.png'); /* Ruta de tu imagen */
+    background-size: 15px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_I:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_I:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/******************************************PONER IMAGEN EN EL BOTON II ***************************************************/
+.btn_II {
+    background-image: url('./Imagenes/II.png'); /* Ruta de tu imagen */
+    background-size: 30px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_II:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_II:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/******************************************PONER IMAGEN EN EL BOTON III ***************************************************/
+.btn_III {
+    background-image: url('./Imagenes/III.png'); /* Ruta de tu imagen */
+    background-size: 40px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_III:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_III:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/******************************************PONER IMAGEN EN EL BOTON IV***************************************************/
+.btn_IV {
+    background-image: url('./Imagenes/IV.png'); /* Ruta de tu imagen */
+    background-size: 40px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_IV:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_IV:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/******************************************PONER IMAGEN EN EL BOTON V******************************************************/
+.btn_V {
+    background-image: url('./Imagenes/V.png'); /* Ruta de tu imagen */
+    background-size: 30px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_V:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_V:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+
+/******************************************PONER IMAGEN EN EL BOTON REDONDA***************************************************/
+.btn_Redonda {
+    background-image: url('./Imagenes/Silencio1.png'); /* Ruta de tu imagen */
+    background-size: 25px 20px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_Redonda:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_Redonda:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/******************************************PONER IMAGEN EN EL BOTON BLANCA***************************************************/
+.btn_Blanca {
+    background-image: url('./Imagenes/Silencio2.png'); /* Ruta de tu imagen */
+    background-size: 20px 35px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_Blanca:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_Blanca:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/******************************************PONER IMAGEN EN EL BOTON NEGRA***************************************************/
+.btn_Negra {
+    background-image: url('./Imagenes/Silencio3.png'); /* Ruta de tu imagen */
+    background-size: 12px 33px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 70px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_Negra:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_Negra:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/******************************************PONER IMAGEN EN EL BOTON CORCHEA***************************************************/
+.btn_Corchea {
+    background-image: url('./Imagenes/Silencio4.png'); /* Ruta de tu imagen */
+    background-size: 23px 37px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_Corchea:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_Corchea:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/****************************************PONER IMAGEN EN EL BOTON SEMICORCHEA***************************************************/
+.btn_Semicorchea {
+    background-image: url('./Imagenes/Silencio5.png'); /* Ruta de tu imagen */
+    background-size: 23px 37px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_Semicorchea:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_Semicorchea:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/****************************************PONER IMAGEN EN EL BOTON FUSA***************************************************/
+.btn_Fusa {
+    background-image: url('./Imagenes/Silencio6.png'); /* Ruta de tu imagen */
+    background-size: 23px 37px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_Fusa:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_Fusa:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+
+/****************************************PONER IMAGEN EN EL BOTON SEMIFUSA***************************************************/
+.btn_Semifusa {
+    background-image: url('./Imagenes/Silencio7.png'); /* Ruta de tu imagen */
+    background-size: 23px 37px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_Semifusa:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_Semifusa:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/********************************PONER IMAGEN EN EL BOTON SILENCIO REDONDA***************************************************/
+.btn_SRedonda {
+    background-image: url('./Imagenes/Silencio8.png'); /* Ruta de tu imagen */
+    background-size: 35px 16px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_SRedonda:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_SRedonda:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/********************************PONER IMAGEN EN EL BOTON SILENCIO BLANCA***************************************************/
+.btn_SBlanca {
+    background-image: url('./Imagenes/Silencio9.png'); /* Ruta de tu imagen */
+    background-size: 35px 16px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_SBlanca:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_SBlanca:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+
+/******************************************PONER IMAGEN EN EL BOTON SILENCIO NEGRA ***************************************************/
+.btn_SNegra {
+    background-image: url('./Imagenes/Silencio10.png'); /* Ruta de tu imagen */
+    background-size: 30px 40px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_SNegra:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_SNegra:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+
+/********************************PONER IMAGEN EN EL BOTON SILENCIO BLANCA***************************************************/
+.btn_SBlanca {
+    background-image: url('./Imagenes/Silencio9.png'); /* Ruta de tu imagen */
+    background-size: 35px 16px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_SBlanca:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_SBlanca:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/********************************PONER IMAGEN EN EL BOTON SILENCIO CORCHEA***************************************************/
+.btn_SCorchea {
+    background-image: url('./Imagenes/Silencio11.png'); /* Ruta de tu imagen */
+    background-size: 20px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_SCorchea:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_SCorchea:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/********************************PONER IMAGEN EN EL BOTON SILENCIO SEMICORCHEA***************************************************/
+.btn_SSemicorchea {
+    background-image: url('./Imagenes/Silencio12.png'); /* Ruta de tu imagen */
+    background-size: 20px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_SSemicorchea:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_SSemicorchea:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/********************************PONER IMAGEN EN EL BOTON SILENCIO FUSA***************************************************/
+.btn_SFusa {
+    background-image: url('./Imagenes/Silencio13.png'); /* Ruta de tu imagen */
+    background-size: 20px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_SFusa:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_SFusa:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+
+/********************************PONER IMAGEN EN EL BOTON SILENCIO SEMIFUSA***************************************************/
+.btn_SSemifusa {
+    background-image: url('./Imagenes/Silencio14.png'); /* Ruta de tu imagen */
+    background-size: 23px 35px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_SSemifusa:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_SSemifusa:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+
+/********************************PONER IMAGEN EN EL BOTON PUENTE ***************************************************/
+.btn_Puente {
+    background-image: url('./Imagenes/Puente.png'); /* Ruta de tu imagen */
+    background-size: 40px 20px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_Puente:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_Puente:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/********************************PONER IMAGEN EN EL BOTON FLECHA 1 ***************************************************/
+.btn_Flecha1 {
+    background-image: url('./Imagenes/Flecha1.png'); /* Ruta de tu imagen */
+    background-size: 55px 35px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_Flecha2:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_Flecha1:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/********************************PONER IMAGEN EN EL BOTON FLECHA 2 ***************************************************/
+.btn_Flecha2 {
+    background-image: url('./Imagenes/Flecha2.png'); /* Ruta de tu imagen */
+    background-size: 55px 35px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_Flecha2:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_Flecha2:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/********************************PONER IMAGEN EN EL BOTON FLECHA 3 ***************************************************/
+.btn_Flecha3 {
+    background-image: url('./Imagenes/Flecha3.png'); /* Ruta de tu imagen */
+    background-size: 65px 45px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_Flecha3:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_Flecha3:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/********************************PONER IMAGEN EN EL BOTON PUNTO ***************************************************/
+.btn_Punto {
+    background-image: url('./Imagenes/Punto.png'); /* Ruta de tu imagen */
+    background-size: 19px 25px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_Punto:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_Punto:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/********************************PONER IMAGEN EN EL BOTON BARRA DOBLE ***************************************************/
+.btn_BarraDoble {
+    background-image: url('./Imagenes/BarraDoble.png'); /* Ruta de tu imagen */
+    background-size: 20px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_BarraDoble:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_BarraDoble:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/********************************PONER IMAGEN EN EL BOTON PUNTO NEGRO***************************************************/
+.btn_PuntoN {
+    background-image: url('./Imagenes/PuntoNegro.png'); /* Ruta de tu imagen */
+    background-size: 19px 25px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_PuntoN:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_PuntoN:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/********************************PONER IMAGEN EN EL BOTON BARRA DOBLE NEGRA***************************************************/
+.btn_BarraDobleN {
+    background-image: url('./Imagenes/BarraDobleNegra.png'); /* Ruta de tu imagen */
+    background-size: 20px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_BarraDobleN:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_BarraDobleN:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/***************************************PONER IMAGEN EN EL BOTON PARADA 2***************************************************/
+.btn_Parada2 {
+    background-image: url('./Imagenes/Parada2.png'); /* Ruta de tu imagen */
+    background-size: 25px 33px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 70px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_Parada2:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_Parada2:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/***************************************PONER IMAGEN EN EL BOTON PARADA 3***************************************************/
+.btn_Parada3 {
+    background-image: url('./Imagenes/Parada3.png'); /* Ruta de tu imagen */
+    background-size: 35px 33px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 70px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_Parada3:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_Parada3:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/***************************************PONER IMAGEN EN EL BOTON PARADA 4***************************************************/
+.btn_Parada4 {
+    background-image: url('./Imagenes/Parada4.png'); /* Ruta de tu imagen */
+    background-size: 45px 33px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 70px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_Parada4:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_Parada4:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/***************************************PONER IMAGEN EN EL BOTON PARADA 5***************************************************/
+.btn_Parada5 {
+    background-image: url('./Imagenes/Parada5.png'); /* Ruta de tu imagen */
+    background-size: 55px 33px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 70px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_Parada5:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_Parada5:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+
+/**********************************PONER IMAGEN EN EL BOTON INSERTAR (SIMBOLO MUSICAL)**************************************************/
+.btn-insert-symbol {
+    background-image: url('./Imagenes/simbolos.png'); /* Ruta de tu imagen */
+    background-size: 170px 25px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 250px; /* Ancho del botón */
+    height: 50px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn-insert-symbol:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn-insert-symbol:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/**********************************PONER IMAGEN EN EL BOTON INSERTAR (NOTA MUSICAL)**************************************************/
+.btn-notamusical {
+    background-image: url('./Imagenes/notas.png'); /* Ruta de tu imagen */
+    background-size: 190px 20px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 250px; /* Ancho del botón */
+    height: 50px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn-notamusical:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn-notamusical:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/******************************************PONER IMAGEN EN EL BOTON SILENCIO CORTO***************************************************/
+.btn_silencioC {
+    background-image: url('./Imagenes/silencioC.png'); /* Ruta de tu imagen */
+    background-size: 30px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_silencioC:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_silencioC:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+/******************************************PONER IMAGEN EN EL BOTON SILENCIO LARGO*********************************************/
+.btn_silencioL {
+    background-image: url('./Imagenes/silencioL.png'); /* Ruta de tu imagen */
+    background-size: 30px 30px; /* Ajusta manualmente el tamaño del fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none; /* Sin bordes */
+    width: 50px; /* Ancho del botón */
+    height: 70px; /* Altura del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* Efecto hover para mejorar la interacción */
+.btn_silencioL:hover {
+    filter: brightness(0.5); /* Hace la imagen más oscura al pasar el mouse */
+}
+
+/* Efecto cuando se hace clic */
+.btn_silencioL:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+}
+
+
+/******************************************PONER IMAGEN EN EL BOTON BIS *************************************************/
+
+.btn_Bis {
+    background-image: url('./Imagenes/Bis.png');
+    background-size: 70px 33px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+/* Efecto hover para mejorar la interacción */
+.btn_Bis:hover {
+    filter: brightness(0.5);/* Hace la imagen más oscura al pasar el mouse */
+}
+/* Efecto cuando se hace clic */
+.btn_Bis:active {
+    transform: scale(0.95);/* Reduce un poco el tamaño al hacer clic */
+}
+
+
+/*******************************************************************************************************
+ PONER IMAGEN EN LOS BOTONES DE LAS NOTAS MUSICALES
+********************************************************************************************************/
+
+/* Nota C */
+.btn_C {
+    background-image: url('./Imagenes/C.png');
+    background-size: 40px 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_C:hover {
+    filter: brightness(0.5);
+}
+
+.btn_C:active {
+    transform: scale(0.95);
+}
+
+/* Nota D */
+.btn_D {
+    background-image: url('./Imagenes/D.png');
+    background-size: 30px 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_D:hover {
+    filter: brightness(0.5);
+}
+
+.btn_D:active {
+    transform: scale(0.95);
+}
+
+/* Nota E */
+.btn_E {
+    background-image: url('./Imagenes/E.png');
+    background-size: 30px 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_E:hover {
+    filter: brightness(0.5);
+}
+
+.btn_E:active {
+    transform: scale(0.95);
+}
+
+/* Nota F */
+.btn_F {
+    background-image: url('./Imagenes/F.png');
+    background-size: 30px 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_F:hover {
+    filter: brightness(0.5);
+}
+
+.btn_F:active {
+    transform: scale(0.95);
+}
+
+/* Nota G */
+.btn_G {
+    background-image: url('./Imagenes/G.png');
+    background-size: 40px 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_G:hover {
+    filter: brightness(0.5);
+}
+
+.btn_G:active {
+    transform: scale(0.95);
+}
+
+/* Nota A */
+.btn_A {
+    background-image: url('./Imagenes/A.png');
+    background-size: 40px 45px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_A:hover {
+    filter: brightness(0.5);
+}
+
+.btn_A:active {
+    transform: scale(0.95);
+}
+
+/* Nota B */
+.btn_B {
+    background-image: url('./Imagenes/B.png');
+    background-size: 35px 45px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_B:hover {
+    filter: brightness(0.5);
+}
+
+.btn_B:active {
+    transform: scale(0.95);
+}
+
+/* Nota Cm */
+.btn_Cm {
+    background-image: url('./Imagenes/Cm.png');
+    background-size: 60px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_Cm:hover {
+    filter: brightness(0.5);
+}
+
+.btn_Cm:active {
+    transform: scale(0.95);
+}
+
+/* Nota Dm */
+.btn_Dm {
+    background-image: url('./Imagenes/Dm.png');
+    background-size: 70px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_Dm:hover {
+    filter: brightness(0.5);
+}
+
+.btn_Dm:active {
+    transform: scale(0.95);
+}
+
+/* Nota Em */
+.btn_Em {
+    background-image: url('./Imagenes/Em.png');
+    background-size: 70px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_Em:hover {
+    filter: brightness(0.5);
+}
+
+.btn_Em:active {
+    transform: scale(0.95);
+}
+
+/* Nota Fm */
+.btn_Fm {
+    background-image: url('./Imagenes/Fm.png');
+    background-size: 70px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_Fm:hover {
+    filter: brightness(0.5);
+}
+
+.btn_Fm:active {
+    transform: scale(0.95);
+}
+
+/* Nota Gm */
+.btn_Gm {
+    background-image: url('./Imagenes/Gm.png');
+    background-size: 70px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_Gm:hover {
+    filter: brightness(0.5);
+}
+
+.btn_Gm:active {
+    transform: scale(0.95);
+}
+
+/* Nota Am */
+.btn_Am {
+    background-image: url('./Imagenes/Am.png');
+    background-size: 70px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_Am:hover {
+    filter: brightness(0.5);
+}
+
+.btn_Am:active {
+    transform: scale(0.95);
+}
+
+/* Nota Bm */
+.btn_Bm {
+    background-image: url('./Imagenes/Bm.png');
+    background-size: 70px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_Bm:hover {
+    filter: brightness(0.5);
+}
+
+.btn_Bm:active {
+    transform: scale(0.95);
+}
+
+/* Nota C# */
+.btn_Cs {
+    background-image: url('./Imagenes/Cs.png');
+    background-size: 60px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_Cs:hover {
+    filter: brightness(0.5);
+}
+
+.btn_Cs:active {
+    transform: scale(0.95);
+}
+
+/* Nota Eb */
+.btn_Eb {
+    background-image: url('./Imagenes/Eb.png');
+    background-size: 60px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_Eb:hover {
+    filter: brightness(0.5);
+}
+
+.btn_Eb:active {
+    transform: scale(0.95);
+}
+
+/* Nota F# */
+.btn_Fs {
+    background-image: url('./Imagenes/Fs.png');
+    background-size: 60px 45px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_Fs:hover {
+    filter: brightness(0.5);
+}
+
+.btn_Fs:active {
+    transform: scale(0.95);
+}
+
+/* Nota G# */
+.btn_Gs {
+    background-image: url('./Imagenes/Gs.png');
+    background-size: 70px 45px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_Gs:hover {
+    filter: brightness(0.5);
+}
+
+.btn_Gs:active {
+    transform: scale(0.95);
+}
+
+/* Nota Bb */
+.btn_Bb {
+    background-image: url('./Imagenes/Bb.png');
+    background-size: 55px 45px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_Bb:hover {
+    filter: brightness(0.5);
+}
+
+.btn_Bb:active {
+    transform: scale(0.95);
+}
+
+/* Nota C#m */
+.btn_Csm {
+    background-image: url('./Imagenes/Csm.png');
+    background-size: 90px 45px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_Csm:hover {
+    filter: brightness(0.5);
+}
+
+.btn_Csm:active {
+    transform: scale(0.95);
+}
+
+/* Nota Ebm */
+.btn_Ebm {
+    background-image: url('./Imagenes/Ebm.png');
+    background-size: 90px 45px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_Ebm:hover {
+    filter: brightness(0.5);
+}
+
+.btn_Ebm:active {
+    transform: scale(0.95);
+}
+
+/* Nota F#m */
+.btn_Fsm {
+    background-image: url('./Imagenes/Fsm.png');
+    background-size: 90px 45px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_Fsm:hover {
+    filter: brightness(0.5);
+}
+
+.btn_Fsm:active {
+    transform: scale(0.95);
+}
+
+/* Nota G#m */
+.btn_Gsm {
+    background-image: url('./Imagenes/Gsm.png');
+    background-size: 90px 45px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_Gsm:hover {
+    filter: brightness(0.5);
+}
+
+.btn_Gsm:active {
+    transform: scale(0.95);
+}
+
+/* Nota Bbm */
+.btn_Bbm {
+    background-image: url('./Imagenes/Bbm.png');
+    background-size: 90px 45x;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn_Bbm:hover {
+    filter: brightness(0.5);
+}
+
+.btn_Bbm:active {
+    transform: scale(0.95);
+}
+
+
+
+/*******************************************************TAMAÑO Y FORMA DE SEGMA Y CODA**********************************************/
+.image {
+    position: absolute;
+    width: 60px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+
+}
+
+/***************************************TAMAÑO Y FORMA DE INICIO Y FIN DE REPETICION**********************************************/
+.image_Rep {
+    position: absolute;
+    width: 25px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON DE PARADA RAYA*****************************************************/
+.image_ParadaRaya {
+    position: absolute;
+    width: 20px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+
+/***************************************TAMAÑO Y FORMA DE BOTON DE SALIDA *****************************************************/
+.image_salida {
+    position: absolute;
+    width: 150px;
+    /* Tamaño inicial de la imagen */
+    height: 50px;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+.selected {
+    outline: 2px dashed rgb(0, 0, 0);/* Indica que la imagen está seleccionada */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON DE FLECHA ARRIBA*****************************************************/
+.image_flechaArriba {
+    position: absolute;
+    width: 20px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON DE FLECHA ABAJO*****************************************************/
+.image_flechaAbajo {
+    position: absolute;
+    width: 20px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON DE RAYA LARGA*****************************************************/
+.image_rayaLarga {
+    position: absolute;
+    width: 300px;
+    /* Tamaño inicial de la imagen */
+    height: 5px;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+
+/***************************************TAMAÑO Y FORMA DE BOTON DE RAYA VERTICAL*************************************************/
+.image_rayaVertical {
+    position: absolute;
+    width: 25px;
+    /* Tamaño inicial de la imagen */
+    height: 100px;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+
+/***************************************TAMAÑO Y FORMA DE BOTON DE I*****************************************************/
+.image_I {
+    position: absolute;
+    width: 17px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON DE II*****************************************************/
+.image_II {
+    position: absolute;
+    width: 32px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON DE III*****************************************************/
+.image_III {
+    position: absolute;
+    width: 50px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON DE IV*****************************************************/
+.image_IV {
+    position: absolute;
+    width: 50px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON DE V*******************************************************/
+.image_V {
+    position: absolute;
+    width: 35px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON REDONDA**********************************************/
+.image_Redonda {
+    position: absolute;
+    width: 22px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON BLANCA**********************************************/
+.image_Blanca {
+    position: absolute;
+    width: 17px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON NEGRA*****************************************************/
+.image_Negra {
+    position: absolute;
+    width: 11px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON CORCHEA**********************************************/
+.image_Corchea {
+    position: absolute;
+    width: 22px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON SEMICORCHEA**********************************************/
+.image_Semicorchea {
+    position: absolute;
+    width: 22px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON FUSA**********************************************/
+.image_Fusa {
+    position: absolute;
+    width: 22px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+
+/***************************************TAMAÑO Y FORMA DE BOTON SEMIFUSA**********************************************/
+.image_SemiFusa {
+    position: absolute;
+    width: 22px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+
+/***************************************TAMAÑO Y FORMA DE BOTON SILENCIO REDONDA***********************************************/
+.image_SRedonda {
+    position: absolute;
+    width: 30px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON SILENCIO BLANCA***********************************************/
+.image_SBlanca {
+    position: absolute;
+    width: 30px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+
+/***************************************TAMAÑO Y FORMA DE BOTON SILENCIO NEGRA***********************************************/
+.image_SNegra {
+    position: absolute;
+    width: 18px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON SILENCIO CORCHEA***********************************************/
+.image_SCorchea {
+    position: absolute;
+    width: 22px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***********************************TAMAÑO Y FORMA DE BOTON SILENCIO SEMICORCHEA***********************************************/
+.image_SCorchea {
+    position: absolute;
+    width: 21px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***********************************TAMAÑO Y FORMA DE BOTON SILENCIO SEMICORCHEA***********************************************/
+.image_SSemicorchea {
+    position: absolute;
+    width: 20px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***********************************TAMAÑO Y FORMA DE BOTON SILENCIO FUSA***********************************************/
+.image_SFusa {
+    position: absolute;
+    width: 15px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***********************************TAMAÑO Y FORMA DE BOTON SILENCIO SEMIFUSA***********************************************/
+.image_SSemiFusa {
+    position: absolute;
+    width: 16px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+
+/***********************************TAMAÑO Y FORMA DE BOTON PUENTE***********************************************/
+.image_Puente {
+    position: absolute;
+    width: 30px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***********************************TAMAÑO Y FORMA DE BOTON FLECHA 1***********************************************/
+.image_Flecha1 {
+    position: absolute;
+    width: 52px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***********************************TAMAÑO Y FORMA DE BOTON FLECHA 2***********************************************/
+.image_Flecha2 {
+    position: absolute;
+    width: 52px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***********************************TAMAÑO Y FORMA DE BOTON FLECHA 3***********************************************/
+.image_Flecha3 {
+    position: absolute;
+    width: 54px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***********************************TAMAÑO Y FORMA DE BOTON PUNTO***********************************************/
+.image_Punto {
+    position: absolute;
+    width: 12px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***********************************TAMAÑO Y FORMA DE BOTON BARRA DOBLE********************************************/
+.image_BarraDoble {
+    position: absolute;
+    width: 12px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON PARADA 2*****************************************************/
+.image_Parada2 {
+    position: absolute;
+    width: 24px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON PARADA 3*****************************************************/
+.image_Parada3 {
+    position: absolute;
+    width: 35px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON PARADA 4*****************************************************/
+.image_Parada4 {
+    position: absolute;
+    width: 46px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON PARADA 5*****************************************************/
+.image_Parada5 {
+    position: absolute;
+    width: 57px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON SILENCIOS*****************************************************/
+.image_silencio {
+    position: absolute;
+    width: 25px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON NOTAS GRUPO 1*****************************************************/
+.image_Notas1{
+    position: absolute;
+    width: 35px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON NOTAS GRUPO 2*****************************************************/
+.image_Notas2{
+    position: absolute;
+    width: 30px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON NOTAS GRUPO 3*****************************************************/
+.image_Notas3{
+    position: absolute;
+    width: 70px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON NOTAS GRUPO 4*****************************************************/
+.image_Notas4{
+    position: absolute;
+    width: 50px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON NOTAS GRUPO 5*****************************************************/
+.image_Notas5{
+    position: absolute;
+    width: 90px;
+    /* Tamaño inicial de la imagen */
+    height: auto;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+/***************************************TAMAÑO Y FORMA DE BOTON BIS*****************************************************/
+.image_Bis{
+    position: absolute;
+    width: 70px;
+    /* Tamaño inicial de la imagen */
+    height: 30px;
+    /* opacity: 0.5; /* Semi-transparente para simular "detrás del texto" */
+    cursor: move;
+    z-index: 0; /* Colocamos detrás del texto */
+}
+
+
+/* Estilo del mensaje de confirmacion de eliminar una pagina */
+.modal {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Asegurarse de que esté encima de otros elementos */
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.modal-content button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+/* Estilo del mensaje de confirmacion de recragar la pagina */
+.modal1 {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Asegurarse de que esté encima de otros elementos */
+}
+
+.modal1-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.modal1-content button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Ventana superpuesta de Simbolos Musicales*/
+.modal-symbol {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Tooltip debe tener un z-index mayor */
+}
+
+
+.modal-content-symbol {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 1000px;
+    height: 500px;
+    max-height: 90%;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-symbol {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+}
+
+.buttons-symbols button {
+    margin: 10px;
+    padding: 10px;
+    width: 100px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #ddd;
+    border: none;
+}
+
+.buttons-symbols button:hover {
+    background-color: #bbb;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Ventana superpuesta de Notas Musicales*/
+.modal-notas {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Tooltip debe tener un z-index mayor */
+}
+
+.modal-content-notas {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 900px;
+    height: 450px;
+    max-height: 90%;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-notas {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+}
+
+.buttons-notas button {
+    margin: 10px;
+    padding: 10px;
+    width: 100px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #ddd;
+    border: none;
+}
+
+.buttons-notas button:hover {
+    background-color: #bbb;
+}
+
+/*--------------------------------------------------------------------*/
