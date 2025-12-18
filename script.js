@@ -3124,6 +3124,7 @@ function addBis() {
     cerrarVentanaSimbolos();
 }
 
+/* --------------------------------------------------------------------------------------------------------------------------------
 
 //Funcion para hacer la imagen arrastrable
 function makeImageDraggable(img) {
@@ -3170,6 +3171,54 @@ function makeImageDraggable(img) {
     });
 }
 
+*/
+
+
+function makeImageDraggable(img) {
+    let offsetX = 0, offsetY = 0;
+
+    img.style.position = 'absolute';
+    img.style.touchAction = 'none'; // 🔑 MUY IMPORTANTE para móviles
+
+    img.addEventListener('pointerdown', (e) => {
+        const sheet = img.closest('.sheet');
+        const sheetRect = sheet.getBoundingClientRect();
+
+        offsetX = e.clientX - img.getBoundingClientRect().left;
+        offsetY = e.clientY - img.getBoundingClientRect().top;
+
+        img.setPointerCapture(e.pointerId);
+
+        function onPointerMove(event) {
+            const rightMargin = 10;
+            const bottomMargin = 30;
+
+            const newLeft = Math.min(
+                Math.max(event.clientX - sheetRect.left - offsetX, 0),
+                sheetRect.width - img.offsetWidth - rightMargin
+            );
+
+            const newTop = Math.min(
+                Math.max(event.clientY - sheetRect.top - offsetY, 0),
+                sheetRect.height - img.offsetHeight - bottomMargin
+            );
+
+            img.style.left = `${newLeft}px`;
+            img.style.top = `${newTop}px`;
+        }
+
+        function onPointerUp() {
+            document.removeEventListener('pointermove', onPointerMove);
+            document.removeEventListener('pointerup', onPointerUp);
+        }
+
+        document.addEventListener('pointermove', onPointerMove);
+        document.addEventListener('pointerup', onPointerUp);
+
+        e.preventDefault();
+    });
+}
+
 // Función para seleccionar una imagen
 function selectImage(img) {
     if (selectedImage && selectedImage !== img) {
@@ -3179,6 +3228,31 @@ function selectImage(img) {
     selectedImage = img;
     selectedImage.classList.add('selected');
 }
+
+
+
+// Función para deseleccionar una imagen
+function deselectImage() {
+    if (selectedImage) {
+        selectedImage.classList.remove('selected'); // Quitar la clase 'selected'
+        selectedImage = null; // Restablecer la variable a null
+    }
+}
+
+//Deseleccionar la imagen al hacer clic fuera de cualquier imagen 
+document.addEventListener('click', (event) => {
+    if (selectedImage && !event.target.classList.contains('image')) {
+        deselectImage(); // Deseleccionar la imagen si el clic fue fuera de una imagen
+    }
+});
+
+
+
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+
 
 
 // Escuchar el evento de tecla presionada para eliminar la imagen
@@ -3196,20 +3270,6 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Función para deseleccionar una imagen
-function deselectImage() {
-    if (selectedImage) {
-        selectedImage.classList.remove('selected'); // Quitar la clase 'selected'
-        selectedImage = null; // Restablecer la variable a null
-    }
-}
-
-//Deseleccionar la imagen al hacer clic fuera de cualquier imagen 
-document.addEventListener('click', (event) => {
-    if (selectedImage && !event.target.classList.contains('image')) {
-        deselectImage(); // Deseleccionar la imagen si el clic fue fuera de una imagen
-    }
-});
 
 // Función para deshacer la última imagen agregada
 function removeLast() {
@@ -3543,5 +3603,6 @@ function cerrarVentanaNotas() {
     document.body.style.overflow = "auto"; // Reactivar el scroll del fondo
     inicializarTooltips(); // Reconfigurar los tooltips en toda la página
 }
+
 
 
