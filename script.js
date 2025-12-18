@@ -3124,56 +3124,9 @@ function addBis() {
     cerrarVentanaSimbolos();
 }
 
-/* --------------------------------------------------------------------------------------------------------------------------------
+
 
 //Funcion para hacer la imagen arrastrable
-function makeImageDraggable(img) {
-    let offsetX = 0, offsetY = 0;
-
-    img.addEventListener('mousedown', (e) => {
-        const sheet = img.closest('.sheet'); // Contenedor de la hoja
-        const sheetRect = sheet.getBoundingClientRect(); // Límites de la hoja
-
-        offsetX = e.clientX - img.getBoundingClientRect().left;
-        offsetY = e.clientY - img.getBoundingClientRect().top;
-
-        function onMouseMove(event) {
-            // Ajustar el margen derecho máximo
-            const rightMargin = 10; // Por ejemplo, 20px de margen adicional
-            const bottomMargin = 30; // Margen inferior, si lo deseas
-
-            // Calcular la posición dentro de los límites
-            const newLeft = Math.min(
-                Math.max(event.clientX - sheetRect.left - offsetX, 0), // Mínimo 0 (borde izquierdo)
-                sheetRect.width - img.offsetWidth - rightMargin // Máximo ancho menos ancho de la imagen menos margen derecho
-            );
-
-            const newTop = Math.min(
-                Math.max(event.clientY - sheetRect.top - offsetY, 0), // Mínimo 0 (borde superior)
-                sheetRect.height - img.offsetHeight - bottomMargin // Máximo altura menos altura de la imagen menos margen inferior
-            );
-
-            // Aplicar las posiciones calculadas
-            img.style.left = `${newLeft}px`;
-            img.style.top = `${newTop}px`;
-        }
-
-        function onMouseUp() {
-            // Eliminar los eventos cuando se suelta el botón del mouse
-            document.removeEventListener('mousemove', onMouseMove);
-            document.removeEventListener('mouseup', onMouseUp);
-        }
-
-        document.addEventListener('mousemove', onMouseMove);
-        document.addEventListener('mouseup', onMouseUp);
-
-        e.preventDefault(); // Prevenir comportamientos no deseados
-    });
-}
-
-*/
-
-
 function makeImageDraggable(img) {
     let offsetX = 0, offsetY = 0;
 
@@ -3229,8 +3182,6 @@ function selectImage(img) {
     selectedImage.classList.add('selected');
 }
 
-
-
 // Función para deseleccionar una imagen
 function deselectImage() {
     if (selectedImage) {
@@ -3245,14 +3196,6 @@ document.addEventListener('click', (event) => {
         deselectImage(); // Deseleccionar la imagen si el clic fue fuera de una imagen
     }
 });
-
-
-
-
-/*
----------------------------------------------------------------------------------------------------------------------------------------
-*/
-
 
 
 // Escuchar el evento de tecla presionada para eliminar la imagen
@@ -3603,6 +3546,7 @@ function cerrarVentanaNotas() {
     document.body.style.overflow = "auto"; // Reactivar el scroll del fondo
     inicializarTooltips(); // Reconfigurar los tooltips en toda la página
 }
+
 
 
 
